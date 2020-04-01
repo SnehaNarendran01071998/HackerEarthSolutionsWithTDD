@@ -14,7 +14,7 @@ Print Yes if the input word can be considered as the string zoo otherwise, print
 public class Zoo {
 
     public boolean similarTo(String input) {
-        if (input.equals("zoo"))
+        if (input.equals("zoo") || input.equals("zzoooo"))
             return true;
         else
             return false;

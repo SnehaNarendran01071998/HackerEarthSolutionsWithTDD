@@ -17,4 +17,11 @@ class ZooTest {
         String input = "zooo";
         assertFalse(zoo.similarTo(input));
     }
+
+    @Test
+    void shouldReturnTrueIfInputIsZzoooo() {
+        Zoo zoo = new Zoo();
+        String input = "zzoooo";
+        assertTrue(zoo.similarTo(input));
+    }
 }
