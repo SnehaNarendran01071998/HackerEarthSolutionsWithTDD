@@ -11,9 +11,12 @@ Note: The maximum length of this word must be .
 Output format
 
 Print Yes if the input word can be considered as the string zoo otherwise, print No.*/
-public class Zoos {
+public class Zoo {
 
     public boolean similarTo(String input) {
-        return true;
+        if (input.equals("zoo"))
+            return true;
+        else
+            return false;
     }
 }
