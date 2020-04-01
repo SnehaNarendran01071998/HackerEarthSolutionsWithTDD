@@ -23,11 +23,20 @@ class ZooTest {
         String input = "zzoooo";
         assertTrue(zoo.similarTo(input));
     }
+
     @Test
     void shouldReturnCountAsZeroIfNoLetterZInInput() {
         Zoo zoo = new Zoo();
         String input = "oooooo";
         int countOfZ = zoo.zCounter(input);
-        assertEquals(0,countOfZ);
+        assertEquals(0, countOfZ);
+    }
+
+    @Test
+    void shouldReturnCountAsOneIfOneZIsPresentInInput() {
+        Zoo zoo = new Zoo();
+        String input = "z";
+        int countOfZ = zoo.zCounter(input);
+        assertEquals(1, countOfZ);
     }
 }

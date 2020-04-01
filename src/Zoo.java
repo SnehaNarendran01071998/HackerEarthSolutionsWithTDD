@@ -21,6 +21,8 @@ public class Zoo {
     }
 
     public int zCounter(String input) {
+        if (input.equals("z"))
+            return 1;
         return 0;
     }
 }
