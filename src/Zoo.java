@@ -19,4 +19,8 @@ public class Zoo {
         else
             return false;
     }
+
+    public int zCounter(String input) {
+        return 0;
+    }
 }

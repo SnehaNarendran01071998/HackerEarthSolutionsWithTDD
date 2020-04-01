@@ -1,7 +1,6 @@
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 class ZooTest {
     @Test
@@ -23,5 +22,12 @@ class ZooTest {
         Zoo zoo = new Zoo();
         String input = "zzoooo";
         assertTrue(zoo.similarTo(input));
+    }
+    @Test
+    void shouldReturnCountAsZeroIfNoLetterZInInput() {
+        Zoo zoo = new Zoo();
+        String input = "oooooo";
+        int countOfZ = zoo.zCounter(input);
+        assertEquals(0,countOfZ);
     }
 }
