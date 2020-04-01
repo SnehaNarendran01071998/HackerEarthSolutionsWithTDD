@@ -35,8 +35,8 @@ class ZooTest {
     @Test
     void shouldReturnCountAsOneIfOneZIsPresentInInput() {
         Zoo zoo = new Zoo();
-        String input = "z";
+        String input = "zzzeee";
         int countOfZ = zoo.zCounter(input);
-        assertEquals(1, countOfZ);
+        assertEquals(3, countOfZ);
     }
 }

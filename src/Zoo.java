@@ -14,15 +14,15 @@ Print Yes if the input word can be considered as the string zoo otherwise, print
 public class Zoo {
 
     public boolean similarTo(String input) {
-        if (input.equals("zoo") || input.equals("zzoooo"))
-            return true;
-        else
-            return false;
+        return 2 * zCounter(input) == ((input.length() - zCounter(input)));
     }
 
     public int zCounter(String input) {
-        if (input.equals("z"))
-            return 1;
-        return 0;
+        int counter = 0;
+        for (char character : input.toCharArray()) {
+            if (character == 'z')
+                counter++;
+        }
+        return counter;
     }
 }
