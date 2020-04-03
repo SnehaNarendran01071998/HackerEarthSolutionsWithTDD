@@ -2,41 +2,44 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class liftQueriesTest {
+class LiftQueriesTest {
 
     @Test
     void shouldReturnLiftAIfCalledFromZerothFloor() {
-        liftQueries liftQueries = new liftQueries();
+        LiftQueries liftQueries = new LiftQueries();
         int floorNumber = 0;
         assertEquals('A', liftQueries.whichLift(floorNumber));
     }
 
     @Test
     void shouldReturnLiftBIfCalledFromSeventhFloor() {
-        liftQueries liftQueries = new liftQueries();
+        LiftQueries liftQueries = new LiftQueries();
         int floorNumber = 7;
         assertEquals('B', liftQueries.whichLift(floorNumber));
     }
 
     @Test
     void shouldReturnLiftAIfCalledFromFirstFloor() {
-        liftQueries liftQueries = new liftQueries();
+        LiftQueries liftQueries = new LiftQueries();
         int floorNumber = 3;
         assertEquals('A', liftQueries.whichLift(floorNumber));
     }
 
     @Test
     void shouldReturnLiftAIfCalledFromFifthFloorIfListAIsAtThirdFloor() {
-        liftQueries liftQueries = new liftQueries();
+        LiftQueries liftQueries = new LiftQueries();
         int floorNumber = 5;
-        liftQueries.moveLiftA(3);
+        int newPositionOfLift = 3;
+        liftQueries.moveLift(newPositionOfLift, 'A');
         assertEquals('A', liftQueries.whichLift(floorNumber));
     }
+
     @Test
     void shouldReturnLiftBIfCalledFromThirdFloorIfListBIsAtFourthFloor() {
-        liftQueries liftQueries = new liftQueries();
+        LiftQueries liftQueries = new LiftQueries();
         int floorNumber = 3;
-        liftQueries.moveLiftB(4);
+        int newPositionOfLift = 4;
+        liftQueries.moveLift(newPositionOfLift, 'B');
         assertEquals('B', liftQueries.whichLift(floorNumber));
     }
 
