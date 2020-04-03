@@ -1,5 +1,8 @@
 public class liftQueries {
     public char whichLift(int floorNumber) {
-        return 'A';
+        if (floorNumber == 0)
+            return 'A';
+        else
+            return 'B';
     }
 }
