@@ -3,7 +3,7 @@ import org.junit.jupiter.api.Test;
 
 class BalancingBracketsTest {
     @Test
-    void shouldReturnFalseForAnEmptyString() {
+    void shouldReturnFalseForAnEmptyArray() {
         char[] input = {};
         BalancingBrackets balancingBrackets = new BalancingBrackets();
         Assertions.assertFalse(balancingBrackets.isBalanced(input));
@@ -15,4 +15,12 @@ class BalancingBracketsTest {
         BalancingBrackets balancingBrackets = new BalancingBrackets();
         Assertions.assertTrue(balancingBrackets.isBalanced(input));
     }
+
+    @Test
+    void shouldReturnFalseIfTheBracketsAreNotBalanced() {
+        char[] input = {'[', ']', '['};
+        BalancingBrackets balancingBrackets = new BalancingBrackets();
+        Assertions.assertFalse(balancingBrackets.isBalanced(input));
+    }
+
 }
