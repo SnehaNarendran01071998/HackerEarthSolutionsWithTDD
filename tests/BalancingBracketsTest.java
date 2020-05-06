@@ -22,5 +22,16 @@ class BalancingBracketsTest {
         BalancingBrackets balancingBrackets = new BalancingBrackets();
         Assertions.assertFalse(balancingBrackets.isBalanced(input));
     }
-
+    @Test
+    void shouldReturnFalseIfTheBracketsAreNotBalancedForDifferentTypeOfBrackets() {
+        char[] input = {'[', ']', '[','}','{'};
+        BalancingBrackets balancingBrackets = new BalancingBrackets();
+        Assertions.assertFalse(balancingBrackets.isBalanced(input));
+    }
+    @Test
+    void shouldReturnTrueIfAClosingBracketIsFoundForAnOpeningBracketForDifferentTypeOfBrackets() {
+        char[] input = {'{','[', ']','}','{','}','[','(',')',']'};
+        BalancingBrackets balancingBrackets = new BalancingBrackets();
+        Assertions.assertTrue(balancingBrackets.isBalanced(input));
+    }
 }

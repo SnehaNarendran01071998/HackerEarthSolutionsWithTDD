@@ -5,16 +5,25 @@ public class BalancingBrackets {
         if (input.length == 0)
             return false;
         for (char c : input) {
-            if (c == '[') {
+            if (c == '[' || c == '{' || c == '(') {
                 stack.push(c);
             }
-            if (c == ']') {
-                if (stack.size() == 0)
-                    return false;
-                else if (stack.pop() != '[')
-                    return false;
+               if (c == ']' || c == '}' || c == ')') {
+                    if (stack.size() == 0)
+                        return false;
+                    else if (!isClosingBracketOf(stack.pop(), c))
+                        return false;
+                }
             }
-        }
+
         return stack.size() == 0;
+    }
+
+    private boolean isClosingBracketOf(char poppedElement, char currentCharacter) {
+        if (poppedElement == '{' && currentCharacter == '}')
+            return true;
+        if (poppedElement == '(' && currentCharacter == ')')
+            return true;
+        return poppedElement == '[' && currentCharacter == ']';
     }
 }
