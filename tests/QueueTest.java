@@ -49,5 +49,18 @@ class QueueTest {
         Assertions.assertThrows(NoSuchElementException.class, queue::dequeue);
     }
 
+    @Test
+    void shouldReturnSizeAsZeroWheQueueIsEmpty() {
+        Queue queue = new Queue();
+        int size = queue.size();
+        Assertions.assertEquals(0, size);
+    }
 
+    @Test
+    void shouldReturnSizeAsOneWheQueueIsEnqueuedWithSingleElement() {
+        Queue queue = new Queue();
+        queue.enqueue('a');
+        int size = queue.size();
+        Assertions.assertEquals(1, size);
+    }
 }
