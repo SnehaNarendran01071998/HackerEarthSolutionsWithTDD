@@ -57,7 +57,4 @@ public class Queue {
         return queueArray;
     }
 
-    public void setQueueArray(char[] queueArray) {
-        this.queueArray = queueArray;
-    }
 }
